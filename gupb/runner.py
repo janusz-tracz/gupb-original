@@ -40,6 +40,8 @@ class Runner:
             verbose_logger.info(f"Starting game number {i + 1}.")
             GameStartReport(i + 1).log(logging.INFO)
             self.run_game(i)
+            if i == 4:
+                raise Exception
 
     def run_game(self, game_no: int) -> None:
         arena = random.choice(self.arenas)
